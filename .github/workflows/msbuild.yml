@@ -31,7 +31,7 @@ jobs:
       uses: microsoft/setup-msbuild@v1.0.2
 
     - name: Build
-      working-directory: ${{env.GITHUB_WORKSPACE}}\JamfPro
+      working-directory: JamfPro
       # Add additional options to the MSBuild command line here (like platform or verbosity level).
       # See https://docs.microsoft.com/visualstudio/msbuild/msbuild-command-line-reference
       run: msbuild /restore /consoleloggerparameters:NoSummary /property:GenerateFullPaths=true
@@ -40,4 +40,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: .mez artifact
-        path: ${{env.GITHUB_WORKSPACE}}\JamfPro\bin\AnyCPU\Debug\JamfPro.mez
+        path: JamfPro\bin\AnyCPU\Debug\JamfPro.mez
